@@ -4,7 +4,9 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +53,6 @@
                                 <rect key="frame" x="308" y="25" width="30" height="30"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="addDrinkPressed:" destination="zt7-jI-6A6" eventType="touchUpInside" id="Uuu-dH-yl8"/>
                                     <segue destination="EmB-tk-Qa3" kind="show" id="iw7-nY-NI7"/>
                                 </connections>
                             </button>
@@ -149,27 +150,89 @@
         <!--History-->
         <scene sceneID="Vy6-TQ-5Ko">
             <objects>
-                <viewController id="oTh-g4-jon" sceneMemberID="viewController">
+                <viewController id="oTh-g4-jon" customClass="HistoryViewController" customModule="StayHydrated" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dm9-xR-rjj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-rf-JJN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyCell" id="reV-Dp-kF7" customClass="HistoryTableViewCell" customModule="StayHydrated" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="reV-Dp-kF7" id="gKb-IG-89H">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GM-em-2NI">
+                                                    <rect key="frame" x="15" y="11" width="82" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zt0-LE-zKK">
+                                                    <rect key="frame" x="312" y="11" width="43" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Zt0-LE-zKK" secondAttribute="trailing" constant="20" id="AuL-WF-wt4"/>
+                                                <constraint firstItem="0GM-em-2NI" firstAttribute="leading" secondItem="gKb-IG-89H" secondAttribute="leadingMargin" id="PbC-LC-WEw"/>
+                                                <constraint firstItem="0GM-em-2NI" firstAttribute="centerY" secondItem="gKb-IG-89H" secondAttribute="centerY" id="YWs-x6-d4w"/>
+                                                <constraint firstItem="Zt0-LE-zKK" firstAttribute="centerY" secondItem="gKb-IG-89H" secondAttribute="centerY" id="qhh-n7-f8b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="0GM-em-2NI" id="zbP-p5-4bs"/>
+                                            <outlet property="percentCompleteLabel" destination="Zt0-LE-zKK" id="2ON-WO-axn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0gK-rf-JJN" firstAttribute="leading" secondItem="wN3-rL-Wpg" secondAttribute="leading" id="0zt-Oj-jgl"/>
+                            <constraint firstItem="0gK-rf-JJN" firstAttribute="bottom" secondItem="wN3-rL-Wpg" secondAttribute="bottom" id="Joq-Av-ygJ"/>
+                            <constraint firstItem="0gK-rf-JJN" firstAttribute="trailing" secondItem="wN3-rL-Wpg" secondAttribute="trailing" id="L9M-pD-G2P"/>
+                            <constraint firstItem="0gK-rf-JJN" firstAttribute="top" secondItem="wN3-rL-Wpg" secondAttribute="top" constant="44" id="T2l-E0-yQ1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wN3-rL-Wpg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" id="Req-bJ-88u"/>
+                    <connections>
+                        <outlet property="tableView" destination="0gK-rf-JJN" id="MHQ-Bh-KgV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFi-xA-OoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="1514"/>
+            <point key="canvasLocation" x="1149.5999999999999" y="1513.4932533733136"/>
         </scene>
         <!--Settings-->
         <scene sceneID="gTa-pf-6Xm">
             <objects>
-                <viewController id="9ZF-qR-eZP" sceneMemberID="viewController">
+                <viewController id="9ZF-qR-eZP" customClass="SettingsViewController" customModule="StayHydrated" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SvA-4z-ADb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjb-YV-rd6">
+                                <rect key="frame" x="159.5" y="70" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutPressed:" destination="9ZF-qR-eZP" eventType="touchUpInside" id="ZG6-4V-IVn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vjb-YV-rd6" firstAttribute="top" secondItem="lFo-Se-YoI" secondAttribute="top" constant="50" id="41l-Q7-kxz"/>
+                            <constraint firstItem="vjb-YV-rd6" firstAttribute="centerX" secondItem="SvA-4z-ADb" secondAttribute="centerX" id="UDS-NV-1ZL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lFo-Se-YoI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="QVQ-aD-nYT"/>

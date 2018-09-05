@@ -18,6 +18,9 @@
 		A787B703213F5A5E0007C86E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A787B702213F5A5E0007C86E /* Assets.xcassets */; };
 		A787B706213F5A5E0007C86E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A787B704213F5A5E0007C86E /* LaunchScreen.storyboard */; };
 		A787B70E213F5DBB0007C86E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A787B70D213F5DBB0007C86E /* GoogleService-Info.plist */; };
+		A7A1A6132140288F0057F273 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1A6122140288F0057F273 /* HistoryViewController.swift */; };
+		A7A1A615214029350057F273 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1A614214029350057F273 /* HistoryTableViewCell.swift */; };
+		A7A1A61721402D6C0057F273 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1A61621402D6C0057F273 /* SettingsViewController.swift */; };
 		C33F97A0273121BE5AFFB0C7 /* Pods_StayHydrated.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CD2DF4D188E3229681A94B /* Pods_StayHydrated.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,9 @@
 		A787B705213F5A5E0007C86E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A787B707213F5A5E0007C86E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A787B70D213F5DBB0007C86E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A7A1A6122140288F0057F273 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		A7A1A614214029350057F273 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		A7A1A61621402D6C0057F273 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A9CD2DF4D188E3229681A94B /* Pods_StayHydrated.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayHydrated.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -65,6 +71,7 @@
 			children = (
 				A709160E213F735C00ED1F1A /* Launch */,
 				A7091607213F6A0600ED1F1A /* WaterConsumptionView.swift */,
+				A7A1A614214029350057F273 /* HistoryTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,6 +100,8 @@
 				A7091609213F6EA000ED1F1A /* Main.storyboard */,
 				A709160F213F738400ED1F1A /* DailyTrackingViewController.swift */,
 				A709161321400BE500ED1F1A /* AddDrinkViewController.swift */,
+				A7A1A6122140288F0057F273 /* HistoryViewController.swift */,
+				A7A1A61621402D6C0057F273 /* SettingsViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -295,10 +304,13 @@
 			files = (
 				A7091612213F789F00ED1F1A /* AuthenticationStore.swift in Sources */,
 				A709161421400BE500ED1F1A /* AddDrinkViewController.swift in Sources */,
+				A7A1A615214029350057F273 /* HistoryTableViewCell.swift in Sources */,
 				A787B6FE213F5A5D0007C86E /* ViewController.swift in Sources */,
 				A7091608213F6A0600ED1F1A /* WaterConsumptionView.swift in Sources */,
 				A787B6FC213F5A5D0007C86E /* AppDelegate.swift in Sources */,
+				A7A1A6132140288F0057F273 /* HistoryViewController.swift in Sources */,
 				A7091610213F738400ED1F1A /* DailyTrackingViewController.swift in Sources */,
+				A7A1A61721402D6C0057F273 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

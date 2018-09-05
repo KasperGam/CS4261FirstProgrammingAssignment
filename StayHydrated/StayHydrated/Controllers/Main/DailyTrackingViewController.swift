@@ -20,7 +20,18 @@ class DailyTrackingViewController: UIViewController {
         // Load code here
         self.title = "Daily Hydration"
         navigationItem.title = "Daily Hydration"
+        updateUI()
+
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateUI()
+    }
+
+    
+    private func updateUI() {
         if let user = AuthenticationStore.auth?.currentUser {
             nameLabel.text = user.displayName
             print(user.uid)
@@ -29,7 +40,7 @@ class DailyTrackingViewController: UIViewController {
             guard let thisuser = AuthenticationStore.currentDBUser else { return }
             thisuser.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
                 guard
-                let value = snapshot.value as? [String: Any],
+                    let value = snapshot.value as? [String: Any],
                     let entries = value["entries"] as? [String: Any],
                     let weakSelf = self
                     else {
@@ -39,19 +50,13 @@ class DailyTrackingViewController: UIViewController {
                 }
                 
                 if  let entry = entries[weakSelf.getTodayString()] as? [String: Any] {
-                        if let amount = entry["amount"] as? NSNumber {
-                            weakSelf.setProgress(amount: Int(truncating: amount))
-                        }
+                    if let amount = entry["amount"] as? NSNumber {
+                        weakSelf.setProgress(amount: Int(truncating: amount))
+                    }
                 }
                 
             })
         }
-        
-    }
-    
-    @IBAction func addDrinkPressed(_ sender: Any) {
-        
-        
     }
     
     private func getTodayString() -> String {
