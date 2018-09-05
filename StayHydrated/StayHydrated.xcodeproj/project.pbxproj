@@ -53,7 +53,6 @@
 		A787B6EF213F5A5C0007C86E = {
 			isa = PBXGroup;
 			children = (
-				A787B70D213F5DBB0007C86E /* GoogleService-Info.plist */,
 				A787B6FA213F5A5C0007C86E /* StayHydrated */,
 				A787B6F9213F5A5C0007C86E /* Products */,
 				D2DC8507538ADE37EDE02A83 /* Pods */,
@@ -78,6 +77,7 @@
 				A787B702213F5A5E0007C86E /* Assets.xcassets */,
 				A787B704213F5A5E0007C86E /* LaunchScreen.storyboard */,
 				A787B707213F5A5E0007C86E /* Info.plist */,
+				A787B70D213F5DBB0007C86E /* GoogleService-Info.plist */,
 			);
 			path = StayHydrated;
 			sourceTree = "<group>";
@@ -166,15 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-StayHydrated-checkManifestLockResult.txt",
 			);
@@ -188,16 +184,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StayHydrated/Pods-StayHydrated-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
