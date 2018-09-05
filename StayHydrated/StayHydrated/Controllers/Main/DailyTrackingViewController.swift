@@ -19,34 +19,32 @@ class DailyTrackingViewController: UIViewController {
     override func viewDidLoad() {
         // Load code here
         self.title = "Daily Hydration"
+        navigationItem.title = "Daily Hydration"
         
         if let user = AuthenticationStore.auth?.currentUser {
             nameLabel.text = user.displayName
             print(user.uid)
             let database = Database.database().reference()
-            let uservalues = database.child("User")
-            print(uservalues.description())
-            uservalues.childByAutoId().setValue(["userid": user.uid, "entries": []])
-            let thisuser = uservalues.queryEqual(toValue: user.uid, childKey: "userid")
-            print(thisuser.description)
-            thisuser.observe(.value, with: { [weak self] (snapshot) in
+            let uservalues = database.child("UserData")
+            guard let thisuser = AuthenticationStore.currentDBUser else { return }
+            thisuser.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
                 guard
-                    let value = snapshot.value as? NSDictionary,
-                    let entries = value["entries"] as? [NSDictionary],
+                let value = snapshot.value as? [String: Any],
+                    let entries = value["entries"] as? [String: Any],
                     let weakSelf = self
                     else {
+                        uservalues.child(user.uid).setValue(["entries":
+                            [self!.getTodayString(): ["amount": 0]]])
                         return
                 }
-                for entry in entries {
-                    if let entryDate = entry["date"] as? Date,
-                        weakSelf.checkDates(entryDate) {
-                            if let amount = entry["amount"] as? NSNumber {
-                                weakSelf.setProgress(amount: Int(truncating: amount))
-                            }
-                    }
+                
+                if  let entry = entries[weakSelf.getTodayString()] as? [String: Any] {
+                        if let amount = entry["amount"] as? NSNumber {
+                            weakSelf.setProgress(amount: Int(truncating: amount))
+                        }
                 }
+                
             })
-            // Make API call to firebase with user to get
         }
         
     }
@@ -56,22 +54,23 @@ class DailyTrackingViewController: UIViewController {
         
     }
     
-    private func checkDates(_ checkDate: Date) -> Bool {
-        let calendar = Calendar.current
-        let currentDate = Date()
-
-        if calendar.component(.year, from: checkDate) != calendar.component(.year, from: currentDate) {
-            return false
-        } else if calendar.component(.weekOfYear, from: checkDate) != calendar.component(.weekOfYear, from: currentDate) {
-            return false
-        } else if calendar.component(.day, from: checkDate) != calendar.component(.day, from: currentDate) {
-            return false
-        }
-        return true
+    private func getTodayString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-YYYY"
+        return formatter.string(from: Date())
+    }
+    
+    private func checkDates(_ checkDate: String) -> Bool {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-YYYY"
+        return checkDate == formatter.string(from: Date())
     }
 
     private func setProgress(amount: Int) {
         print(amount)
+        let percent = CGFloat(amount) / 64.0
+        consumptionView.percentComplete = percent
+        progressIndicator.text = "\(percent*100) %"
     }
 
 }

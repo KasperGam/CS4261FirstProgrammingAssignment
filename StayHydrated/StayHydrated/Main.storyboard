@@ -52,6 +52,7 @@
                                 <state key="normal" title="+"/>
                                 <connections>
                                     <action selector="addDrinkPressed:" destination="zt7-jI-6A6" eventType="touchUpInside" id="Uuu-dH-yl8"/>
+                                    <segue destination="EmB-tk-Qa3" kind="show" id="iw7-nY-NI7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,6 +82,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgM-4X-d7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="293.60000000000002" y="1513.4932533733136"/>
+        </scene>
+        <!--Add Drink View Controller-->
+        <scene sceneID="Azb-cG-OZ7">
+            <objects>
+                <viewController id="EmB-tk-Qa3" customClass="AddDrinkViewController" customModule="StayHydrated" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DOZ-8p-6aQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yKs-HQ-Wv2">
+                                <rect key="frame" x="20" y="70" width="335" height="216"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWc-bf-W83">
+                                        <rect key="frame" x="0.0" y="98" width="70" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="lz0-2Y-i9j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zwk-ot-fOR">
+                                        <rect key="frame" x="70" y="0.0" width="265" height="216"/>
+                                    </pickerView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zvR-vp-Fag">
+                                <rect key="frame" x="20" y="286" width="335" height="216"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63O-lu-hbY">
+                                        <rect key="frame" x="0.0" y="98" width="70" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="vlr-1H-D2S"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOk-IQ-C8b">
+                                        <rect key="frame" x="70" y="0.0" width="265" height="216"/>
+                                    </pickerView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zvR-vp-Fag" secondAttribute="trailing" constant="20" id="5Br-d6-vDe"/>
+                            <constraint firstItem="zvR-vp-Fag" firstAttribute="leading" secondItem="DOZ-8p-6aQ" secondAttribute="leading" constant="20" id="H4i-wU-zdO"/>
+                            <constraint firstItem="yKs-HQ-Wv2" firstAttribute="leading" secondItem="DOZ-8p-6aQ" secondAttribute="leading" constant="20" id="MyU-Eb-eCi"/>
+                            <constraint firstAttribute="trailing" secondItem="yKs-HQ-Wv2" secondAttribute="trailing" constant="20" id="VKJ-XO-DaY"/>
+                            <constraint firstItem="zvR-vp-Fag" firstAttribute="top" secondItem="yKs-HQ-Wv2" secondAttribute="bottom" id="eAe-ZT-XZo"/>
+                            <constraint firstItem="yKs-HQ-Wv2" firstAttribute="top" secondItem="usl-mH-voH" secondAttribute="top" constant="50" id="o55-f1-Xhg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="usl-mH-voH"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountPickerView" destination="Zwk-ot-fOR" id="rYT-26-CkN"/>
+                        <outlet property="typePickerView" destination="JOk-IQ-C8b" id="qLz-MV-OHn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dtb-c3-Lme" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293.60000000000002" y="2259.2203898050975"/>
         </scene>
         <!--History-->
         <scene sceneID="Vy6-TQ-5Ko">

@@ -11,6 +11,7 @@
 		A709160A213F709000ED1F1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7091609213F6EA000ED1F1A /* Main.storyboard */; };
 		A7091610213F738400ED1F1A /* DailyTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709160F213F738400ED1F1A /* DailyTrackingViewController.swift */; };
 		A7091612213F789F00ED1F1A /* AuthenticationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7091611213F789F00ED1F1A /* AuthenticationStore.swift */; };
+		A709161421400BE500ED1F1A /* AddDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709161321400BE500ED1F1A /* AddDrinkViewController.swift */; };
 		A787B6FC213F5A5D0007C86E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787B6FB213F5A5D0007C86E /* AppDelegate.swift */; };
 		A787B6FE213F5A5D0007C86E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787B6FD213F5A5D0007C86E /* ViewController.swift */; };
 		A787B701213F5A5D0007C86E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A787B6FF213F5A5D0007C86E /* Login.storyboard */; };
@@ -27,6 +28,7 @@
 		A7091609213F6EA000ED1F1A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "/Users/kasper/Desktop/school/CS 4261/programming assignment/CS4261FirstProgrammingAssignment/StayHydrated/StayHydrated/Main.storyboard"; sourceTree = "<absolute>"; };
 		A709160F213F738400ED1F1A /* DailyTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTrackingViewController.swift; sourceTree = "<group>"; };
 		A7091611213F789F00ED1F1A /* AuthenticationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStore.swift; sourceTree = "<group>"; };
+		A709161321400BE500ED1F1A /* AddDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkViewController.swift; sourceTree = "<group>"; };
 		A787B6F8213F5A5C0007C86E /* StayHydrated.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayHydrated.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A787B6FB213F5A5D0007C86E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A787B6FD213F5A5D0007C86E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				A7091609213F6EA000ED1F1A /* Main.storyboard */,
 				A709160F213F738400ED1F1A /* DailyTrackingViewController.swift */,
+				A709161321400BE500ED1F1A /* AddDrinkViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7091612213F789F00ED1F1A /* AuthenticationStore.swift in Sources */,
+				A709161421400BE500ED1F1A /* AddDrinkViewController.swift in Sources */,
 				A787B6FE213F5A5D0007C86E /* ViewController.swift in Sources */,
 				A7091608213F6A0600ED1F1A /* WaterConsumptionView.swift in Sources */,
 				A787B6FC213F5A5D0007C86E /* AppDelegate.swift in Sources */,

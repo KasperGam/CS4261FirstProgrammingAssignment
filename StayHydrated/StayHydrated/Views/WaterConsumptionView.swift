@@ -17,6 +17,7 @@ class WaterConsumptionView: UIView {
                 percentComplete = 0.0
             }
             updateFillView()
+            setNeedsLayout()
         }
     }
     
@@ -45,6 +46,7 @@ class WaterConsumptionView: UIView {
         
         fillView = UIView(frame: CGRect(x: 0, y: frame.height - percentComplete, width: frame.width, height: percentComplete))
         fillView.backgroundColor = UIColor.blue
+        addSubview(fillView)
     }
     
     private func updateFillView() {

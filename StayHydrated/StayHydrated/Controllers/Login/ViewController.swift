@@ -2,9 +2,6 @@
 //  ViewController.swift
 //  StayHydrated
 //
-//  Created by Kasper Gammeltoft on 9/4/18.
-//  Copyright © 2018 CS4261. All rights reserved.
-//
 
 import UIKit
 import FirebaseUI
@@ -38,7 +35,10 @@ extension ViewController: FUIAuthDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let tabVC = storyboard.instantiateInitialViewController() else { return }
         
+
         navigationController?.setViewControllers([tabVC], animated: true)
+        UINavigationBar.appearance().backgroundColor = UIColor.blue
+        navigationController?.navigationBar.backgroundColor = UIColor.blue
     }
 }
 

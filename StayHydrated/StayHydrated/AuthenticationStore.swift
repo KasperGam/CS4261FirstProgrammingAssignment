@@ -7,8 +7,15 @@
 //
 
 import FirebaseUI
+import FirebaseDatabase
 
 public class AuthenticationStore {
     
     static var auth: Auth?
+    
+    static var currentDBUser: DatabaseReference? {
+        guard let currentUser = auth?.currentUser else { return nil }
+        let database = Database.database().reference()
+        return database.child("UserData").child(currentUser.uid)
+    }
 }
